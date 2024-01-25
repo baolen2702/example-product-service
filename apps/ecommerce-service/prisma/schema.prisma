@@ -57,11 +57,21 @@ model Address {
 }
 
 model Product {
-  createdAt   DateTime @default(now())
+  categoryId  Category? @relation(fields: [id], references: [id])
+  id          String?
+  createdAt   DateTime  @default(now())
   description String?
-  id          String   @id @default(cuid())
+  id          String    @id @default(cuid())
   itemPrice   Float?
   name        String?
   orders      Order[]
-  updatedAt   DateTime @updatedAt
+  updatedAt   DateTime  @updatedAt
+}
+
+model Category {
+  createdAt DateTime  @default(now())
+  id        String    @id @default(cuid())
+  name      String?
+  products  Product[]
+  updatedAt DateTime  @updatedAt
 }

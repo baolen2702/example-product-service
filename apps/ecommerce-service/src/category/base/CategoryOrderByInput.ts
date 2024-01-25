@@ -18,18 +18,7 @@ import { SortOrder } from "../../util/SortOrder";
   isAbstract: true,
   description: undefined,
 })
-class ProductOrderByInput {
-  @ApiProperty({
-    required: false,
-    enum: ["asc", "desc"],
-  })
-  @IsOptional()
-  @IsEnum(SortOrder)
-  @Field(() => SortOrder, {
-    nullable: true,
-  })
-  id?: SortOrder;
-
+class CategoryOrderByInput {
   @ApiProperty({
     required: false,
     enum: ["asc", "desc"],
@@ -50,29 +39,7 @@ class ProductOrderByInput {
   @Field(() => SortOrder, {
     nullable: true,
   })
-  description?: SortOrder;
-
-  @ApiProperty({
-    required: false,
-    enum: ["asc", "desc"],
-  })
-  @IsOptional()
-  @IsEnum(SortOrder)
-  @Field(() => SortOrder, {
-    nullable: true,
-  })
   id?: SortOrder;
-
-  @ApiProperty({
-    required: false,
-    enum: ["asc", "desc"],
-  })
-  @IsOptional()
-  @IsEnum(SortOrder)
-  @Field(() => SortOrder, {
-    nullable: true,
-  })
-  itemPrice?: SortOrder;
 
   @ApiProperty({
     required: false,
@@ -97,4 +64,4 @@ class ProductOrderByInput {
   updatedAt?: SortOrder;
 }
 
-export { ProductOrderByInput as ProductOrderByInput };
+export { CategoryOrderByInput as CategoryOrderByInput };
